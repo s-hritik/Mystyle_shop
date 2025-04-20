@@ -9,9 +9,9 @@ export const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* About Section */}
           <div>
-            <h3 className="text-white text-lg font-semibold mb-4">About ShopStyle</h3>
+            <h3 className="text-white text-lg font-semibold mb-4">About MyStyle</h3>
             <p className="text-gray-400 mb-4">
-              Discover the latest trends in fashion and lifestyle products. Quality meets style at ShopStyle.
+              Discover the latest trends in fashion and lifestyle products. Quality meets style at MyStyle.
             </p>
             <div className="flex items-center gap-4">
               <a href="#" className="text-gray-400 hover:text-white transition-colors">
@@ -97,7 +97,7 @@ export const Footer: React.FC = () => {
 
         {/* Bottom Bar */}
         <div className="mt-12 pt-8 border-t border-gray-800 text-center text-gray-400">
-          <p>&copy; {new Date().getFullYear()} ShopStyle. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} MyStyle. All rights reserved.</p>
         </div>
       </div>
     </footer>
