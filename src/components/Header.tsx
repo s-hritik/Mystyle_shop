@@ -1,58 +1,23 @@
 import React, { useState } from 'react';
-import { ShoppingCart, Search, Menu, User, Heart, LogOut } from 'lucide-react';
-import { Link, useNavigate } from 'react-router-dom';
+import { ShoppingCart, Search, Menu, User, Heart} from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { SearchBar } from './SearchBar';
 import { useUser } from '../context/UserContext';
-import { useAuth } from '../context/AuthContext';
 
 interface HeaderProps {
   totalItems: number;
   onCartOpen: () => void;
-  onSearchOpen: () => void;
 }
 
 export const Header: React.FC<HeaderProps> = ({ totalItems, onCartOpen }) => {
+  // Use the updated UserContext
   const { wishlist } = useUser();
-  const { user, signOut } = useAuth();
-  const navigate = useNavigate();
   const [isSearchVisible, setIsSearchVisible] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
-  const handleSignOut = async () => {
-    try {
-      await signOut();
-      navigate('/signin');
-    } catch (error) {
-      console.error('Error signing out:', error);
-    }
-  };
 
   return (
     <header className="bg-white shadow-sm sticky top-0 z-50">
       <div className="max-w-7xl mx-auto">
-        {/* Top Bar */}
-        <div className="border-b border-gray-100">
-          <div className="px-4 sm:px-6 lg:px-8 py-2">
-            <div className="flex items-center justify-between text-sm">
-              <p className="text-gray-600">Free shipping on orders over $100</p>
-              <div className="flex items-center gap-4">
-                <Link to="/track-order" className="text-gray-600 hover:text-gray-900">Track Order</Link>
-                <Link to="/contact" className="text-gray-600 hover:text-gray-900">Contact</Link>
-                {user ? (
-                  <button
-                    onClick={handleSignOut}
-                    className="text-gray-600 hover:text-gray-900 flex items-center gap-1"
-                  >
-                    <LogOut size={16} />
-                    Sign Out
-                  </button>
-                ) : (
-                  <Link to="/signin" className="text-gray-600 hover:text-gray-900">Sign In</Link>
-                )}
-              </div>
-            </div>
-          </div>
-        </div>
 
         {/* Main Header */}
         <div className="px-4 sm:px-6 lg:px-8 py-4">

@@ -76,6 +76,7 @@ export const Shop: React.FC<ShopProps> = ({ onAddToCart }) => {
                 >
                   All Categories
                 </button>
+                
                 {categories.map(category => (
                   <button
                     key={category}
