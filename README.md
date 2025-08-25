@@ -1,6 +1,6 @@
 
   <div class="container">
-    <h1>MyStyle Shop</h1>
+    <h1>MyStyle</h1>
     <p><strong>MyStyle Shop</strong> is a e-commerce fashion platform built using <strong>React</strong>. It includes product browsing, cart functionality - all packed into a responsive, modern UI.</p>
 
    <hr />
